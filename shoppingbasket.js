@@ -1,7 +1,15 @@
 class ShoppingBasket {
 
+  constructor() {
+    this.totalPrice = 0;
+  }
+
+  addItem(item) {
+    this.totalPrice += item.getPrice();  
+  }
+
   getTotalPrice() {
-    return 0
+    return this.totalPrice;
   }
 }
 
