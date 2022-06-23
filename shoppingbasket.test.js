@@ -8,10 +8,18 @@ describe('shopping basket',() => {
   })
 
   it('adds a candy and returns its price as the total price',() => {
-    const candyDouble = { getPrice: () => 4.99 };
+    const candyDouble = { getPrice: () => 3.99 };
     const basket = new ShoppingBasket();
     basket.addItem(candyDouble);
-    expect(basket.getTotalPrice()).toEqual(4.99);
+    expect(basket.getTotalPrice()).toEqual(3.99);
+  })
+
+  it('adds multiple candies and gives the sum of their prices',() => {
+    const candyDouble = { getPrice: () => 3.99 };
+    const basket = new ShoppingBasket();
+    basket.addItem(candyDouble);
+    basket.addItem(candyDouble);
+    expect(basket.getTotalPrice()).toEqual(7.98);
   })
 
 })
