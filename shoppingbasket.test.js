@@ -22,4 +22,13 @@ describe('shopping basket',() => {
     expect(basket.getTotalPrice()).toEqual(7.98);
   })
 
+  it('applies a disocunt',() => {
+    const candyDouble = { getPrice: () => 3.99 };
+    const basket = new ShoppingBasket();
+    basket.addItem(candyDouble);
+    basket.addItem(candyDouble);
+    basket.applyDiscount(2);
+    expect(basket.getTotalPrice()).toEqual(5.98);
+  })
+
 })

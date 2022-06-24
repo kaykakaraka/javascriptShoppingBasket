@@ -2,14 +2,22 @@ class ShoppingBasket {
 
   constructor() {
     this.totalPrice = 0;
+    this.discount = 0;
   }
 
   addItem(item) {
     this.totalPrice += item.getPrice();  
   }
 
+  applyDiscount(discount) {
+    this.discount = discount;
+    console.log(this.discount);
+  }
+
   getTotalPrice() {
-    return this.totalPrice;
+    console.log(this.totalPrice);
+    console.log(this.discount);
+    return this.totalPrice - this.discount;
   }
 }
 
